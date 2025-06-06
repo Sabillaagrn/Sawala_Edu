@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../font/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-darkgray: #313131;
+    --color-bg: #F0F0F0;
+    --color-darkgray-second: #847D7D;
+}
+
+#content {
+    padding: 0 20px;
+    background: var(--color-bg);
+}
+
+#content #container {
+    border: 1px solid var(--color-darkgray);
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#content #container .title {
+    background: var(--color-darkgray);
+    color: white;
+    padding: 0px 10px;
+    margin: 0;
+    line-height: 0;
+}
+
+#content #container .wraps {
+    padding: 10px;
+}
+
+#content #container .wraps .wrap_button {
+    width: 50%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#content #container .wraps .wrap_button .dropdown {
+    width: 100%;
+    background: var(--color-darkgray);
+    height: 30px;
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+#content #container .wraps .wrap_button .dropdown:hover {
+    background: var(--color-darkgray-second);
+}
+
+
+
+#content #container .wraps .wrap_button .button_account {
+    background: white;
+    display: none;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+}
+
+#content #container .wraps .wrap_button .button_account button {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+#content #container .wraps .wrap_button .button_account button:hover {
+    background: whitesmoke;
+
+}
