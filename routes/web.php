@@ -14,3 +14,7 @@ Route::get('/dashboard', function () {
 Route::get('/kelolaakun', function () {
     return view(view: 'kelola_akun');
 });
+
+Route::get('/guru', function () {
+    return view('guru');
+});
