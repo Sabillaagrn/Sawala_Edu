@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../font/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-darkgray: #313131;
+    --color-bg: #F0F0F0;
+    --color-darkgray-second: #847D7D;
+    --color-soft-green: #4DA986;
+}
+
+#content {
+    padding: 0 20px;
+}
+
+#content #container {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+#content #container .title {
+    background: var(--color-soft-green);
+    color: white;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+#content #container form {
+    padding: 10px 20px;
+}
+
+#studentForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    border: 1px solid var(--color-soft-green);
+}
+
+.form-group textarea {
+    border: 1px solid var(--color-soft-green);
+}
+
+.form-group select {
+    border: 1px solid var(--color-soft-green);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

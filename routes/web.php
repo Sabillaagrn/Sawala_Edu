@@ -18,3 +18,11 @@ Route::get('/kelolaakun', function () {
 Route::get('/guru', function () {
     return view('guru');
 });
+
+Route::get('/kelolaakun/siswa', function () {
+    return view(view: 'kelola_akun_siswa');
+});
+
+Route::get('/kelolaakun/wali_kelas', function () {
+    return view(view: 'kelola_akun_wali_kelas');
+});

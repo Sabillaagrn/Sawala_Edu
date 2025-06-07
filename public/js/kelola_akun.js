@@ -18,5 +18,5 @@ buttonSiswa.addEventListener("click", function () {
 });
 
 button_wali.addEventListener("click", function () {
-    window.location.href = window.baseUrl + '/kelolaakun/walimurid';
+    window.location.href = window.baseUrl + '/kelolaakun/wali_kelas';
 })
