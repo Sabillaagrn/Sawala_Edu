@@ -8,8 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sawala Edu</title>
-  <link rel="stylesheet" href="{{ asset('css/siswa.css') }}">
-  <script src="{{ asset('js/siswa.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
   <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -22,7 +21,7 @@
 <aside>
 
   <div class="logo">
-    <img src="{{ asset('image/sidebar/sawala_white.png') }}" alt="Sawala Logo" class="logo-img">
+    <img src="{{ asset('image/image_sidebar/sawala_white.png') }}" alt="Sawala Logo" class="logo-img">
     <span class="logo-text">Sawala Edu</span>
   </div>
 
