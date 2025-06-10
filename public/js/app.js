@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+import './bootstrap';
+=======
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const sidebar = document.querySelector("aside");
@@ -7,3 +10,4 @@ document.addEventListener("DOMContentLoaded", function () {
         menuToggle.classList.toggle("open");
     });
 });
+>>>>>>> admin_guru__siswa
