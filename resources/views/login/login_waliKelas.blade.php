@@ -59,7 +59,7 @@
 
                     <div class="alternate-login">
                         <p>
-                            <a href="{{ route('login_waliKelas') }}">Login sebagai Orang Tua</a> | 
+                            <a href="{{ route('login') }}">Login sebagai Orang Tua</a> | 
                             <a href="{{ route('login_admin') }}">Login sebagai Admin</a>
                         </p>
                     </div>

@@ -6,9 +6,8 @@
     <title>@yield('title', 'Dashboard')</title>
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <link rel="icon" href="{{ asset('image/Sawala Edu (Default).png') }}" sizes="64x64">
-
-      <link rel="stylesheet" href="{{ asset('css/guru.css') }}">
-  <script src="{{ asset('js/guru.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/css_admin/guru.css') }}">
+  <script src="{{ asset('js/js_admin/guru.js') }}" defer></script>
   <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -19,32 +18,32 @@
 <aside>
 
   <div class="logo">
-    <img src="{{ asset('image_guru/sawala_white.png') }}" alt="Sawala Logo" class="logo-img">
+    <img src="{{ asset('image/image_sidebar/sawala_white.png') }}" alt="Sawala Logo" class="logo-img">
     <span class="logo-text">Sawala Edu</span>
   </div>
 
   <nav>
     <ul>
       <li>
-        <a href="#">
+        <a href="/dashboard" class="{{ Request::is('dashboard') ? 'active' : '' }}">
           <i class="fa-solid fa-chart-line"></i>
           <span>Dashboard</span>
         </a>
       </li>
       <li>
-        <a href="#" class="active">
+        <a href="/guru" class="{{ Request::is('guru') ? 'active' : '' }}">
           <i class="fa-solid fa-chalkboard-user"></i>
           <span>Guru</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="/siswa" class="{{ Request::is('siswa') ? 'active' : '' }}">
           <i class="fa-solid fa-graduation-cap"></i>
           <span>Siswa</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="/kelolaakun" class="{{ Request::is('kelolaakun') ? 'active' : '' }}">
           <i class="fa-solid fa-school"></i>
           <span>Kelola Akun</span>
         </a>

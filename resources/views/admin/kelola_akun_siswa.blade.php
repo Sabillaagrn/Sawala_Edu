@@ -3,7 +3,7 @@
 @section('title', content: 'Kelola Akun Siswa')
 
 @push('styles')
-  <link rel="stylesheet" href="{{ asset("css/kelola_akun_siswa.css") }}">
+  <link rel="stylesheet" href="{{ asset("css/css_admin/kelola_akun_siswa.css") }}">
   @endpush
 @section(section: 'content')
   <div id="content">
@@ -76,5 +76,5 @@
   <h1>Kelola Akun Siswa</h1>
   @endsection
 @push('script')
-  <script src="{{ asset('js/kelola_akun_siswa.js') }}" defer></script>
+  <script src="{{ asset('js/js_admin/kelola_akun_siswa.js') }}" defer></script>
   @endpush

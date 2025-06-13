@@ -7,7 +7,8 @@
   <script src="{{ asset('js/js_admin/dashboard.js') }}" defer></script>
   <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
+  <link rel="icon" href="{{ asset('image/Sawala Edu (Default).png') }}" sizes="64x64">
+  
   <title>Sawala Edu</title>
 </head>
 <body class="page-transition">
@@ -38,7 +39,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/kelolaakun" class="{{ Request::is('kelolaakun') ? 'active' : '' }}">
             <i class="fa-solid fa-school"></i>
             <span>Kelola Akun</span>
           </a>
@@ -206,7 +207,7 @@
                   <td><button class="action-btn">⋯</button></td>
                 </tr>
 
-                <tr>
+                <tr class="card">
                   <td>
                     <div class="teacher-info">
                       <div class="teacher-avatar">Y</div>
@@ -228,9 +229,9 @@
             <div class="pagination">
               <div class="pagination-info">Showing 1-5 from 100 data</div>
               <div class="pagination-controls">
-                <button class="arrow-button prev" disabled>&#x276E;‹</button>
+                <button class="arrow-button prev" disabled>&#x276E</button>
                 <div class="page-numbers"></div>
-                <button class="arrow-button next">&#x276F;›</button>
+                <button class="arrow-button next">&#x276F</button>
               </div>
             </div>
           </div>

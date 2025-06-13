@@ -3,7 +3,7 @@
 @section('title', content: 'Kelola Akun')
 
 @push('styles')
-  <link rel="stylesheet" href="{{ asset("css/kelola_akun.css") }}">
+  <link rel="stylesheet" href="{{ asset("css/css_admin/kelola_akun.css") }}">
   @endpush
 
   @section('title-nav')
@@ -30,5 +30,5 @@
 @endsection
 
 @push('script')
-  <script src="{{ asset('js/kelola_akun.js') }}" defer></script>
+  <script src="{{ asset('js/js_admin/kelola_akun.js') }}" defer></script>
   @endpush
