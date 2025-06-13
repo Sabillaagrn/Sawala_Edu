@@ -1,15 +1,5 @@
 /* ===================
-   GENERAL RESET
-=================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-/* ===================
-   KEYFRAMES & ANIMATION
+   CARD GRID & ANIMATION
 =================== */
 @keyframes fadeInUp {
     0% {
@@ -22,384 +12,17 @@
     }
 }
 
-@keyframes slideInSidebar {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* ===================
-   BODY & VARIABLES
-=================== */
-:root {
-    --sb-width: 5rem;
-}
-
-body {
-    --sb-width: 5rem; /* default sidebar width */
-    background: #f9fafb;
-    color: #111827;
-    display: flex;
-    min-height: 100vh;
-}
-
-body.sb-expanded {
-    --sb-width: 12.5rem; /* sidebar lebar saat dibuka */
-}
-
-/* ===================
-   LOGO AREA
-=================== */
-.logo {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    transition: all 0.3s ease;
-    gap: 0;
-}
-
-.logo-img {
-    width: 60px;
-    height: 60px;
-}
-
-.logo-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    white-space: nowrap;
-    line-height: 1;
-}
-
-/* collapsed: hanya icon, tanpa teks */
-body:not(.sb-expanded) .logo {
-    justify-content: center;
-}
-
-body:not(.sb-expanded) .logo-text {
-    display: none;
-}
-
-body:not(.sb-expanded) aside nav a {
-    justify-content: center;
-}
-
-body:not(.sb-expanded) aside nav a span {
-    display: none;
-}
-
-/* ===================
-   SIDEBAR STYLING
-=================== */
-aside {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: var(--sb-width);
-    background: #1f2937;
-    padding: 24px;
-    transform: translateX(-100%);
-    transition: transform 0.6s ease, width 0.3s ease;
-}
-
-/* Pas halaman udah loaded */
-body.loaded aside {
-    transform: translateX(0);
-}
-
-aside nav {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-aside nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-aside nav li:last-child {
-    margin-top: auto; /* item terakhir di sidebar turun ke bawah */
-}
-
-aside .collapse-btn {
-    margin-top: auto;
-    padding-top: 50px;
-}
-
-aside .collapse-btn button {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    border: none;
-    background: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    width: 100%;
-}
-
-aside .collapse-btn button:hover {
-    background-color: #374151;
-}
-
-body:not(.sb-expanded) aside .collapse-btn button {
-    justify-content: center;
-}
-
-body:not(.sb-expanded) aside .collapse-btn button span {
-    display: none;
-}
-
-body.sb-expanded aside .collapse-btn button {
-    justify-content: flex-start;
-}
-
-aside nav a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    margin-bottom: 12px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-aside nav a i {
-    font-size: 16px;
-    width: 20px;
-    text-align: center;
-}
-
-aside nav a span {
-    font-size: 18px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Active menu item */
-aside nav a.active {
-    background-color: #e0f7ff;
-    color: #374151;
-    font-weight: 600;
-}
-
-aside nav a.active i {
-    color: #374151;
-}
-
-/* Hover effects */
-aside nav a:hover {
-    background-color: #374151;
-}
-
-aside nav a:hover:not(.active) {
-    color: #fff;
-}
-
-aside nav a.active:hover {
-    background-color: #dff6ff;
-    color: #7d8ea8;
-}
-
-aside nav a.active:hover i {
-    color: #7d8ea8;
-}
-
-aside nav a:focus-visible {
-    outline: none;
-    color: #d1d5db;
-    background-color: #1f2937;
-}
-
-/* Saat sidebar di-collapse */
-body:not(.sb-expanded) aside nav a {
-    justify-content: center;
-}
-
-body:not(.sb-expanded) aside nav a.active {
-    justify-content: center;
-    padding: 10px;
-}
-
-/* Saat sidebar di-expand */
-body.sb-expanded aside nav a span {
-    opacity: 1;
-}
-
-.fa-angles-right {
-    transition: transform 0.3s ease;
-    transform: rotate(0deg);
-}
-
-body.sb-expanded .fa-angles-right {
-    transform: rotate(180deg);
-}
-
-/* Sidebar spacing adjustments waktu expand */
-body.sb-expanded aside nav a {
-    gap: 8px;
-    padding: 8px 10px;
-}
-
-body.sb-expanded aside nav a i {
-    font-size: 16px;
-}
-
-body.sb-expanded aside nav a span {
-    font-size: 14px;
-}
-
-/* ===================
-   MAIN CONTENT
-=================== */
-main {
-    flex: 1;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-left: var(--sb-width);
-    transition: margin-left 0.3s ease;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-    gap: 16px;
-}
-
-/* Tombol di header */
-.header button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: white;
-    border: 1px solid #d1d5db;
-    border-radius: 50px;
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #374151;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.header button i {
-    font-size: 14px;
-}
-
-.header button:hover {
-    background-color: #374151;
-    color: #fff;
-}
-
-.header button:hover i {
-    color: #fff;
-}
-
-.header-actions {
-    display: flex;
-    gap: 12px;
-}
-
-/* Search bar */
-:root {
-    --search-width: 300px; /* default lebar search bar */
-}
-
-/* Search bar container */
-.search-container {
-    position: relative;
-    width: var(--search-width);
-}
-
-.search-container input {
-    padding: 10px 12px 10px 36px;
-    border: 1px solid #d1d5db;
-    border-radius: 50px;
-    width: 100%;
-    background: white;
-    transition: all 0.3s ease;
-    outline: none;
-}
-
-/* efek pas hover */
-.search-container input:hover {
-    border-color: #10b981;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
-}
-
-/* efek pas focus */
-.search-container input:focus {
-    border-color: #10b981;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
-}
-
-/* icon search */
-.search-container i {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-50%);
-    color: #374151;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.search-container input:focus + i {
-    color: #10b981;
-}
-
-/* ==================
-   ICON BUTTON
-=================== */
-.icon-btn {
-    background-color: white;
-    border: 1px solid #d1d5db;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.icon-btn i {
-    font-size: 16px;
-    color: #374151;
-}
-
-.icon-btn:hover {
-    background-color: #374151;
-}
-
-.icon-btn:hover i {
-    color: #ffffff;
-}
-
 /* ===================
    GRID & CARD CONTENT
 =================== */
+
+:root {
+    --card-min: 250px;
+}
+
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -413,34 +36,29 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    min-width: 230px;
+    flex: 1 1 230px;
     min-height: 220px;
     opacity: 0;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3px;
+    animation: fadeInUp 0.5s ease forwards;
 }
 
 .card h3 {
-    font-size: clamp(17px, 2vw, 9px);
+    font-size: 16px;
     margin: 0;
-    word-wrap: break-word;
     text-align: center;
     max-width: 160px;
-    line-height: 2;
+    line-height: 1.6;
 }
 
 .card .table-icon {
     font-size: 40px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .card p {
-    font-size: 12px;
+    font-size: 13px;
     margin: 0;
-    line-height: 1;
 }
 
 /* Tombol di dalam card */
@@ -455,8 +73,8 @@ main {
     background: white;
     color: #10b981;
     border: none;
-    border-radius: 15px;
-    padding: 8px;
+    border-radius: 50%;
+    padding: 10px;
     cursor: pointer;
     font-size: 16px;
     width: 40px;
@@ -467,14 +85,12 @@ main {
     transition: all 0.3s ease;
 }
 
-/* efek hovernya disini */
 .card .actions button:hover {
     background: #f0fdf4;
     color: #065f46;
     transform: scale(1.05);
 }
 
-/* efek hover khusus iconnn */
 .card .actions button i {
     font-size: 14px;
     transition: all 0.3s ease;
@@ -485,20 +101,25 @@ main {
 }
 
 /* ===================
-   PICK PAGE
+   PAGINATION
 =================== */
-.pagination-controls {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
 .pagination-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
     margin-top: 24px;
+}
+
+.pagination-info {
+    color: #374151;
+    font-size: 14px;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .pagination-arrow {
@@ -533,55 +154,15 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.pagination-info {
-    color: #374151;
-    font-size: 14px;
-}
-
 .pagination-btn:hover:not(.active) {
-    background: #f3f4f6;
+    background: #d8d8d8;
 }
 
 /* ===================
-   RESPONSIVE STYLES
+   RESPONSIVE CARD GRID
 =================== */
 @media (max-width: 768px) {
-    aside {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: var(--sb-width);
-        z-index: 10;
-    }
-
-    main {
-        margin-left: var(--sb-width);
-        padding: 20px;
-    }
-
-    .header input {
-        width: 140px;
-    }
-
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    /* Tombol header di mobile */
-    .header button {
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        border-radius: 50%;
-        justify-content: center;
-    }
-
-    .header button span {
-        display: none;
-    }
-
-    .header button i {
-        font-size: 18px;
+        flex-direction: column;
     }
 }

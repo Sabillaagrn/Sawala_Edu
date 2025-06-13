@@ -32,7 +32,7 @@ searchInput.addEventListener("keyup", function () {
 
 //Page
 document.addEventListener("DOMContentLoaded", function () {
-    const cardsPerPage = 15;
+    const cardsPerPage = 10;
     const cards = Array.from(document.querySelectorAll(".grid .card"));
     const paginationContainer = document.getElementById("pagination-controls");
     const paginationInfo = document.getElementById("pagination-info");
