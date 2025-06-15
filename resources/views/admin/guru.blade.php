@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 
 @section('title', 'Data Guru - Sawala Edu')
 
-@push('styles')
-  <link rel="stylesheet" href="{{ asset('css/guru.css') }}">
-@endpush
+@section('head')
+  <link rel="stylesheet" href="{{ asset('css/admin/guru.css') }}"
+@endsection
+
 
 @section('content')
   <div class="header">
@@ -98,17 +99,4 @@
 
 @push('scripts')
   <script src="{{ asset('js/guru.js') }}"></script>
-
-  <!--===============================
-            SCRIPT COLLAPSE
-  ===============================-->
-  <script>
-    const ResizeBtn = document.querySelector('[data-resize-btn]');
-    if (ResizeBtn) {
-      ResizeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.body.classList.toggle('sb-expanded');
-      });
-    }
-  </script>
 @endpush

@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 
 @section('title', 'Profile Admin')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/profile.css') }}">
     {{-- Font Awesome sudah di app.blade.php, tidak perlu diulang di sini --}}
 @endsection
 

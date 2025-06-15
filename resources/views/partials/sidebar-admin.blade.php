@@ -14,25 +14,25 @@
         </a>
       </li>
       <li>
-        <a href="{{ url('/guru') }}" class="@if(Request::is('guru')) active @endif">
+        <a href="{{ url('/admin/guru') }}" class="@if(Request::is('admin/guru*')) active @endif">
           <i class="fa-solid fa-chalkboard-user"></i>
           <span>Guru</span>
         </a>
       </li>
       <li>
-        <a href="{{ url('/siswa') }}" class="@if(Request::is('siswa')) active @endif">
+        <a href="{{ url('/admin/siswa') }}" class="@if(Request::is('admin/siswa*')) active @endif">
           <i class="fa-solid fa-graduation-cap"></i>
           <span>Siswa</span>
         </a>
       </li>
       <li>
-        <a href="{{ url('/akun') }}" class="@if(Request::is('akun')) active @endif">
+        <a href="{{ url('/admin/akun') }}" class="@if(Request::is('admin/akun*')) active @endif">
           <i class="fa-solid fa-school"></i>
           <span>Kelola Akun</span>
         </a>
       </li>
       <li>
-        <a href="{{ url('/profile') }}" class="@if(Request::is('profile')) active @endif">
+        <a href="{{ url('/admin/profile') }}" class="@if(Request::is('admin/profile*')) active @endif">
           <i class="fa-solid fa-user"></i>
           <span>Profile</span>
         </a>

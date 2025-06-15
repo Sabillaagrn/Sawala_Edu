@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 
 @section('title', 'Data Siswa')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/siswa.css') }}"
+    <link rel="stylesheet" href="{{ asset('css/admin/siswa.css') }}"
 @endsection
 
 @section('content')
