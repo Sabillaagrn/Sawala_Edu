@@ -1,0 +1,206 @@
+/* Profile Card */
+
+.container-judul {
+    margin-bottom: 20px;
+    position: relative;
+    font-size: 15px;
+}
+
+.container-profile {
+    max-width: 1700px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.profile-header .profile-banner {
+    background: #3dbb8b;
+    height: 120px;
+    position: relative;
+}
+
+.profile-picture {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 120px;
+    height: 120px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    background: #ccc;
+    overflow: hidden;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-body {
+    margin-left: 200px;
+    padding: 40px 60px 0;
+}
+
+.profile-body .name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #2c2c51;
+}
+
+.profile-body .role {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.info-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #2c2c51;
+}
+
+.info-item i {
+    margin-right: 8px;
+    color: #3dbb8b;
+}
+
+.section {
+    margin-top: 32px;
+}
+
+.section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c2c51;
+}
+
+.section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #2c2c51;
+}
+
+.edu-year {
+    font-size: 12px;
+    color: #888;
+}
+
+.section p {
+    font-size: 14px;
+    color: #2c2c51;
+}
+
+.profile-menu {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.dropdown-toggle-icon {
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dropdown-toggle-icon:hover {
+    color: #dcdcdc;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+    z-index: 999;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu a i {
+    margin-right: 8px; /* atau 10px sesuai selera */
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+    padding-left: 24px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container-profile {
+        margin: 0 auto;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-body {
+        margin-left: 0;
+        padding: 100px 20px 20px;
+    }
+
+    .profile-picture {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 80px;
+    }
+
+    .info-group {
+        flex-direction: column;
+    }
+}

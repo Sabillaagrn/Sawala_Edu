@@ -1,9 +1,9 @@
-@extends('layout')
+@extends('layouts.app-admin')
 
 @section('title', content: 'Kelola Akun Wali Kelas')
 
 @push('styles')
-  <link rel="stylesheet" href="{{ asset("css/css_admin/kelola_akun_wali_kelas.css") }}">
+  <link rel="stylesheet" href="{{ asset("css/admin/kelola_akun_wali_kelas.css") }}">
   @endpush
 @section(section: 'content')
   <div id="content">
@@ -76,5 +76,5 @@
   <h1>Kelola Akun Siswa</h1>
   @endsection
 @push('script')
-  <script src="{{ asset('js/js_admin/kelola_akun_wali_kelas.js') }}" defer></script>
+  <script src="{{ asset('js/admin/kelola_akun_wali_kelas.js') }}" defer></script>
   @endpush

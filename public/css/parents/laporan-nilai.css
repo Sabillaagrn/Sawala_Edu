@@ -1,0 +1,192 @@
+.laporan-nilai-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.student-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.student-details p {
+    margin: 4px 0;
+    font-size: 16px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Custom dropdown wrapper */
+.custom-select-wrapper {
+    position: relative;
+    width: 150px;
+    user-select: none;
+}
+
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffe3a3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+
+.custom-select-trigger:hover {
+    background-color: #f4e3bc;
+}
+
+.custom-select-trigger i {
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.custom-select-wrapper.open .custom-select-trigger i {
+    transform: rotate(180deg);
+}
+
+.custom-options {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 10;
+}
+
+.custom-select-wrapper.open .custom-options {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.custom-option {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #000;
+}
+
+.custom-option:hover,
+.custom-option.selected {
+    background-color: #c5a65d;
+    color: #fff;
+}
+
+.btn-cetak-rapor {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cetak-rapor i {
+    font-size: 18px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.laporan-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.laporan-table thead th {
+    background-color: #3dbb8b;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+.laporan-table tbody td {
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 12px;
+    color: #000;
+}
+
+.laporan-table tbody td:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.laporan-table tbody td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+/* Print styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .laporan-nilai-container,
+    .laporan-nilai-container * {
+        visibility: visible;
+    }
+    .laporan-nilai-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        padding: 0;
+        box-shadow: none;
+    }
+    .filters,
+    .btn-cetak-rapor {
+        display: none;
+    }
+    .student-info {
+        margin-bottom: 10px;
+    }
+    .print-info {
+        display: block !important;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .laporan-table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+    .laporan-table thead th,
+    .laporan-table tbody td {
+        border: 1px solid #000;
+        border-radius: 0;
+        padding: 8px;
+    }
+}

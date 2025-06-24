@@ -29,12 +29,12 @@
                     </div>
                 </div>
 
-                 <form id="loginForm" action="/login" method="POST">
+                 <form id="loginForm" action="/login/admin" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     
                     <div class="form-group">
-                        <label for="nisOrSiswa" class="form-label">Email</label>
-                        <input type="text" id="nisOrSiswa" name="nis_siswa" class="form-input" required>
+                        <label for="nip" class="form-label">Email</label>
+                        <input type="text" id="nip" name="nip" class="form-input" required>
                     </div>
 
                     <div class="form-group">

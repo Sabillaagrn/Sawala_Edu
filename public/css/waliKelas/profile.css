@@ -1,16 +1,9 @@
-/* ===================
-   GENERAL RESET
-=================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
-/* ===================
-   KEYFRAMES & ANIMATION
-=================== */
 
 @keyframes slideInSidebar {
     0% {
@@ -23,9 +16,6 @@
     }
 }
 
-/* ===================
-   BODY & VARIABLES
-=================== */
 :root {
     --sb-width: 5rem;
 }
@@ -43,9 +33,6 @@ body.sb-expanded {
     --sb-width: 12.5rem; /* sidebar lebar saat dibuka */
 }
 
-/* ===================
-   LOGO AREA
-=================== */
 .logo {
     display: flex;
     align-items: center;
@@ -65,7 +52,6 @@ body.sb-expanded {
     color: #fff;
     white-space: nowrap;
     line-height: 1;
-    transition: opacity 0.3s ease, width 0.3s ease;
 }
 
 /* collapsed: hanya icon, tanpa teks */
@@ -85,9 +71,7 @@ body:not(.sb-expanded) aside nav a span {
     display: none;
 }
 
-/* ===================
-   SIDEBAR STYLING
-=================== */
+/* Sidebar */
 aside {
     position: fixed;
     top: 0;
@@ -97,7 +81,7 @@ aside {
     background: #1f2937;
     padding: 24px;
     transform: translateX(-100%);
-    transition: transform 0.6s ease, width 0.3s ease, padding 0.3s ease;
+    transition: transform 0.6s ease, width 0.3s ease;
 }
 
 /* Pas halaman udah loaded */
@@ -180,11 +164,7 @@ aside nav a i {
 aside nav a span {
     font-size: 18px;
     opacity: 0;
-    transition: opacity 0.3s ease, padding 0.3s ease;
-}
-
-body.sb-expanded aside nav a {
-    transition: gap 0.3s ease, padding 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 /* Active menu item */
@@ -293,6 +273,58 @@ body.sb-expanded aside nav a span {
     gap: 12px;
 }
 
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.button-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #374151;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #374151;
+    color: #fff;
+}
+
+.button-link:hover i {
+    color: #fff;
+}
+
+/* Untuk tombol icon bulat */
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #374151;
+    padding: 0;
+}
+
+.icon-button:hover {
+    background-color: #374151;
+    color: #fff;
+}
+
 /* Search bar */
 :root {
     --search-width: 300px; /* default lebar search bar */
@@ -385,5 +417,243 @@ body.sb-expanded aside nav a span {
 
     .header button i {
         font-size: 18px;
+    }
+}
+
+/* FIXED: Main container dengan spacing yang lebih rapat */
+main {
+    flex: 1;
+    padding: 20px; /* dikurangi dari 32px */
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* dikurangi dari 24px */
+    margin-left: var(--sb-width);
+    transition: margin-left 0.3s ease;
+}
+
+/* FIXED: Header dengan margin bottom yang lebih kecil */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px; /* dikurangi dari 32px */
+    gap: 16px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Profile Card */
+
+.container-judul {
+    margin-bottom: 20px;
+    position: relative;
+    font-size: 15px;
+}
+
+.container-profile {
+    max-width: 1700px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.profile-header .profile-banner {
+    background: #3dbb8b;
+    height: 120px;
+    position: relative;
+}
+
+.profile-picture {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 120px;
+    height: 120px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    background: #ccc;
+    overflow: hidden;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-body {
+    margin-left: 200px;
+    padding: 40px 60px 0;
+}
+
+.profile-body .name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #2c2c51;
+}
+
+.profile-body .role {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.info-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #2c2c51;
+}
+
+.info-item i {
+    margin-right: 8px;
+    color: #3dbb8b;
+}
+
+.section {
+    margin-top: 32px;
+}
+
+.section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c2c51;
+}
+
+.section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #2c2c51;
+}
+
+.edu-year {
+    font-size: 12px;
+    color: #888;
+}
+
+.section p {
+    font-size: 14px;
+    color: #2c2c51;
+}
+
+.profile-menu {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.dropdown-toggle-icon {
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dropdown-toggle-icon:hover {
+    color: #dcdcdc;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+    z-index: 999;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu a i {
+    margin-right: 8px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+    padding-left: 24px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container-profile {
+        margin: 0 auto;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-body {
+        margin-left: 0;
+        padding: 100px 20px 20px;
+    }
+
+    .profile-picture {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 80px;
+    }
+
+    .info-group {
+        flex-direction: column;
     }
 }

@@ -1,0 +1,408 @@
+/* ===================
+   GENERAL RESET
+=================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --sb-width: 5rem;
+}
+
+body {
+    background: #f9fafb;
+    color: #111827;
+    display: flex;
+    height: 100%;
+    min-height: 100vh;
+}
+
+/* Saat sidebar expanded */
+body.sb-expanded {
+    --sb-width: 12.5rem;
+}
+
+/* Wrapper layout */
+.layout-wrapper {
+    display: flex;
+}
+
+/* ===================================
+   KEYFRAMES
+====================================== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInSidebar {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   SIDEBAR
+====================================== */
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    width: var(--sb-width);
+    background: #1f2937;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s ease, width 0.3s ease;
+}
+
+body.loaded aside {
+    transform: translateX(0);
+}
+
+aside nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+aside nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+aside nav li:last-child {
+    margin-top: auto;
+}
+
+aside nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 12px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+aside nav a i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+aside nav a span {
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+aside nav a.active {
+    background-color: #e0f7ff;
+    color: #374151;
+    font-weight: 600;
+}
+
+aside nav a.active i {
+    color: #374151;
+}
+
+aside nav a:hover {
+    background-color: #374151;
+}
+
+aside nav a:hover:not(.active) {
+    color: #fff;
+}
+
+aside nav a.active:hover {
+    background-color: #dff6ff;
+    color: #7d8ea8;
+}
+
+aside nav a.active:hover i {
+    color: #7d8ea8;
+}
+
+aside nav a:focus-visible {
+    outline: none;
+    color: #d1d5db;
+    background-color: #1f2937;
+}
+
+/* Collapse Button */
+aside .collapse-btn {
+    margin-top: auto;
+    padding-top: 50px;
+}
+
+aside .collapse-btn button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+aside .collapse-btn button:hover {
+    background-color: #374151;
+}
+
+/* Sidebar States */
+body:not(.sb-expanded) .logo-text,
+body:not(.sb-expanded) aside nav a span,
+body:not(.sb-expanded) aside .collapse-btn button span {
+    display: none;
+}
+
+body:not(.sb-expanded) .logo,
+body:not(.sb-expanded) aside nav a,
+body:not(.sb-expanded) aside .collapse-btn button {
+    justify-content: center;
+}
+
+body.sb-expanded aside nav a span {
+    opacity: 1;
+}
+
+/* Sidebar spacing saat expand */
+body.sb-expanded aside nav a {
+    gap: 8px;
+    padding: 8px 10px;
+}
+
+body.sb-expanded aside nav a i {
+    font-size: 16px;
+}
+
+body.sb-expanded aside nav a span {
+    font-size: 14px;
+}
+
+.fa-angles-right {
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
+}
+
+body.sb-expanded .fa-angles-right {
+    transform: rotate(180deg);
+}
+
+/* ===================================
+   LOGO
+====================================== */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    gap: 0;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+}
+
+.logo-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+/* ===================================
+   MAIN CONTENT
+====================================== */
+main {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-left: var(--sb-width);
+    transition: margin-left 0.3s ease;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeInUp 0.4s ease both;
+}
+
+/* ===================================
+   HEADER (TOPBAR)
+====================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Header action buttons */
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.header-actions button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header-actions button:hover {
+    background-color: #374151;
+    color: #ffffff;
+}
+
+.header-actions button:hover i {
+    color: #ffffff;
+}
+
+/* Responsive: tombol jadi icon bulat di mobile */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .search-container {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .header-actions {
+        flex-shrink: 0;
+        display: flex;
+        gap: 8px;
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeInUp 0.4s ease both;
+}
+
+/* ===================
+   CUSTOM SCROLLBAR
+=================== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #10b981;
+    border-radius: 10px;
+    border: 2px solid #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0f9f6e;
+}
+
+/* ===================================
+   RESPONSIVE (<=768px)
+====================================== */
+@media (max-width: 768px) {
+    aside {
+        z-index: 10;
+    }
+
+    main {
+        padding: 20px;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .header {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .search-container {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .header-actions {
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    .header button {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    .header button span {
+        display: none;
+    }
+
+    .header button i {
+        font-size: 18px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+}

@@ -6,8 +6,8 @@
     <title>@yield('title', 'Dashboard')</title>
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <link rel="icon" href="{{ asset('image/Sawala Edu (Default).png') }}" sizes="64x64">
-    <link rel="stylesheet" href="{{ asset('css/css_admin/guru.css') }}">
-  <script src="{{ asset('js/js_admin/guru.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/admin/guru.css') }}">
+  <script src="{{ asset('js/admin/guru.js') }}" defer></script>
   <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 

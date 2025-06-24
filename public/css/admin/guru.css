@@ -1,0 +1,168 @@
+/* ===================
+   CARD GRID & ANIMATION
+=================== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================
+   GRID & CARD CONTENT
+=================== */
+
+:root {
+    --card-min: 250px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #10b981;
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 230px;
+    flex: 1 1 230px;
+    min-height: 220px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+    max-width: 160px;
+    line-height: 1.6;
+}
+
+.card .table-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Tombol di dalam card */
+.card .actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.card .actions button {
+    background: white;
+    color: #10b981;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card .actions button:hover {
+    background: #f0fdf4;
+    color: #065f46;
+    transform: scale(1.05);
+}
+
+.card .actions button i {
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.card .actions button:hover i {
+    color: #065f46;
+}
+
+/* ===================
+   PAGINATION
+=================== */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    margin-top: 24px;
+}
+
+.pagination-info {
+    color: #374151;
+    font-size: 14px;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pagination-arrow {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.pagination-arrow:disabled {
+    color: #d1d5db;
+    cursor: not-allowed;
+}
+
+.pagination-btn {
+    background: none;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    color: #6b7280;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn.active {
+    background: #111827;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pagination-btn:hover:not(.active) {
+    background: #d8d8d8;
+}
+
+/* ===================
+   RESPONSIVE CARD GRID
+=================== */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+    }
+}

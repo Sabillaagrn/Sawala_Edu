@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="{{ asset('css/css_admin/dashboard.css') }}" />
-  <script src="{{ asset('js/js_admin/dashboard.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ asset('css/admin/dashboard.css') }}" />
+  <script src="{{ asset('js/admin/dashboard.js') }}" defer></script>
   <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="icon" href="{{ asset('image/Sawala Edu (Default).png') }}" sizes="64x64">
@@ -33,7 +33,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/admin/siswa">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>Siswa</span>
           </a>
@@ -45,7 +45,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/admin/profile">
             <i class="fa-solid fa-user"></i>
             <span>Profile</span>
           </a>
